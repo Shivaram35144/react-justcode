@@ -1,0 +1,160 @@
+import React, { useState } from 'react';
+import './styles.css';
+
+const Page: React.FC = () => {
+  const [expandedBox, setExpandedBox] = useState<number | null>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [selectionMode, setSelectionMode] = useState<'all' | 'range'>('all');
+  const [range, setRange] = useState<{ from: number; to: number }>({ from: 0, to: 0 });
+
+  const handleBoxClick = (index: number) => {
+    setExpandedBox(expandedBox === index ? null : index);
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      setFile(files[0]);
+    }
+  };
+
+  const handleRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setRange({ ...range, [name]: parseInt(value) });
+  };
+
+  const handleSubmit = () => {
+    console.log('File:', file);
+    console.log('Selection mode:', selectionMode);
+    if (selectionMode === 'range') {
+      console.log('Range:', range);
+    }
+  };
+
+  return (
+    <div className="container">
+      <div className="left-side">
+        {[1, 2, 3, 4].map((box, index) => (
+          <div key={index} className="box" onClick={() => handleBoxClick(index)}>
+            <h2>Box {box}</h2>
+            <p>Content of box {box}</p>
+            {expandedBox === index && <div className="expanded-box">More content of box {box}</div>}
+          </div>
+        ))}
+      </div>
+      <div className="right-side">
+        <div className="row">
+          <label htmlFor="file-upload" className="file-upload-label">
+            Upload Excel File
+            <input type="file" id="file-upload" accept=".xlsx, .xls" onChange={handleFileChange} />
+          </label>
+        </div>
+        <div className="row">
+          <div className="selection">
+            <label>
+              <input
+                type="radio"
+                name="selection"
+                value="all"
+                checked={selectionMode === 'all'}
+                onChange={() => setSelectionMode('all')}
+              />
+              Choose all rows
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="selection"
+                value="range"
+                checked={selectionMode === 'range'}
+                onChange={() => setSelectionMode('range')}
+              />
+              Choose rows from
+            </label>
+            {selectionMode === 'range' && (
+              <div className="range-inputs">
+                <input type="number" name="from" value={range.from} onChange={handleRangeChange} />
+                to
+                <input type="number" name="to" value={range.to} onChange={handleRangeChange} />
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="row">
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Page;
+
+
+
+//CSS
+
+
+.container {
+  display: flex;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.expanded-box {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid #000;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.row {
+  margin-bottom: 16px;
+}
+
+.file-upload-label {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.file-upload-label input[type="file"] {
+  display: none;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.selection label {
+  margin-bottom: 8px;
+}
+
+.range-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.range-inputs input {
+  margin: 0 8px;
+}
