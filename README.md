@@ -1,3 +1,78 @@
+Software Requirements Specification (SRS) Document
+
+1. Introduction
+
+1.1 Purpose
+1.2 Scope
+1.3 Definitions, Acronyms, and Abbreviations
+1.4 References
+1.5 Overview
+
+2. Overall Description
+
+2.1 Product Perspective
+2.1.1 System Interfaces
+2.1.2 User Interfaces
+2.1.3 Hardware Interfaces
+2.1.4 Software Interfaces
+2.1.5 Communication Interfaces
+2.2 Product Functions
+2.3 User Characteristics
+2.4 Constraints
+2.5 Assumptions and Dependencies
+2.6 Apportioning of Requirements
+
+3. Specific Requirements
+
+3.1 Functional Requirements
+3.1.1 Module 1
+3.1.1.1 Function 1
+3.1.1.2 Function 2
+3.1.2 Module 2
+3.1.2.1 Function 1
+3.1.2.2 Function 2
+3.2 External Interface Requirements
+3.3 System Features
+3.3.1 Feature 1
+3.3.2 Feature 2
+3.4 Non-functional Requirements
+3.4.1 Performance Requirements
+3.4.2 Safety Requirements
+3.4.3 Security Requirements
+3.4.4 Software Quality Attributes
+3.4.4.1 Reliability
+3.4.4.2 Availability
+3.4.4.3 Maintainability
+3.4.4.4 Portability
+3.5 Database Requirements
+
+4. System Architecture
+
+4.1 System Design
+4.2 Database Design
+4.3 Hardware Architecture
+4.4 Software Architecture
+
+5. Data Requirements
+
+5.1 Data Entities and Relationships
+5.2 Data Flow Diagrams
+5.3 Data Dictionary
+
+6. User Documentation
+
+6.1 User Manual
+6.2 Online Help
+
+7. Appendices
+
+7.1 Glossary
+7.2 Index
+7.3 Document History
+
+
+
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
