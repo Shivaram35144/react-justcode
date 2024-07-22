@@ -17,18 +17,9 @@ Version: 1.0
 Author: [Your Name]
 Date: [Today's Date]
 Objective: To ensure all components of the application function correctly and meet the specified requirements.
-Test Case Template
 
-Each test case should include the following sections:
 
-Test Case ID: Unique identifier for the test case.
-Test Case Description: Brief description of what the test case will verify.
-Preconditions: Any prerequisites or initial setup required before executing the test.
-Test Steps: Detailed steps to execute the test case.
-Expected Result: The expected outcome of the test case.
-Actual Result: The actual outcome after executing the test case (filled after test execution).
-Status: Pass/Fail (filled after test execution).
-Comments: Any additional information or observations.
+
 Test Cases
 1. User Authentication
 
@@ -41,6 +32,13 @@ Enter shivaram in the username field.
 Enter 123 in the password field.
 Click the login button.
 Expected Result: User is successfully logged in and navigated to the home page.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
 Test Case ID: TC-002
 Test Case Description: Verify error message for incorrect credentials.
 Preconditions: User is on the login page.
@@ -50,6 +48,14 @@ Enter shivaram in the username field.
 Enter wrongpassword in the password field.
 Click the login button.
 Expected Result: Error message is displayed indicating incorrect username or password.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 2. Toggle Switch Functionality
 
 Test Case ID: TC-003
@@ -61,6 +67,14 @@ Ensure the toggle switch is off.
 Enter a valid ID in the input field.
 Click the search button.
 Expected Result: The system searches the data store and displays the result on the prediction page if the ID is present.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-004
 Test Case Description: Verify functionality when toggle switch is on and "all rows" is selected.
 Preconditions: User is logged in and on the home page.
@@ -72,6 +86,14 @@ Select "all rows" option.
 Select a model from the dropdown.
 Click the load button.
 Expected Result: A success message is displayed indicating the model is loaded successfully.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-005
 Test Case Description: Verify functionality when toggle switch is on and "from-to" is selected.
 Preconditions: User is logged in and on the home page.
@@ -84,6 +106,14 @@ Enter a valid range in the from and to fields.
 Select a model from the dropdown.
 Click the load button.
 Expected Result: A success message is displayed indicating the model is loaded successfully.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 3. Model Loading
 
 Test Case ID: TC-006
@@ -97,6 +127,14 @@ Select "all rows" or "from-to" option.
 Select a model from the dropdown.
 Click the load button.
 Expected Result: A success message is displayed indicating the model is loaded successfully.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-007
 Test Case Description: Verify error handling for invalid model selection.
 Preconditions: User is logged in and on the home page.
@@ -107,6 +145,14 @@ Upload a valid Excel file.
 Select an invalid or non-existent model from the dropdown.
 Click the load button.
 Expected Result: An error message is displayed indicating the model could not be loaded.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Additional Test Cases
 4. Edge Cases
 
@@ -122,6 +168,14 @@ Enter a range that exceeds the number of rows in the data store.
 Select a model from the dropdown.
 Click the load button.
 Expected Result: An error message is displayed indicating the range is invalid.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-009
 Test Case Description: Verify handling of invalid Excel file upload.
 Preconditions: User is logged in and on the home page.
@@ -133,6 +187,14 @@ Select "all rows" or "from-to" option.
 Select a model from the dropdown.
 Click the load button.
 Expected Result: An error message is displayed indicating the file upload failed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 5. User Interface
 
 Test Case ID: TC-010
@@ -147,6 +209,14 @@ Check the dropdown for model selection.
 Check the load button.
 Expected Result: All UI elements are present and functional.
 
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
+
 6. Save Train Page Functionality
 
 Test Case ID: TC-011
@@ -157,6 +227,14 @@ Test Steps:
 Upload a valid CSS file.
 Click the save button.
 Expected Result: Message "appending" is displayed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-012
 Test Case Description: Verify CSS file upload and save functionality without existing save data.
 Preconditions: User is logged in and navigated to the save train page. No existing save data is present.
@@ -165,6 +243,14 @@ Test Steps:
 Upload a valid CSS file.
 Click the save button.
 Expected Result: Message "saved data" is displayed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-013
 Test Case Description: Verify train button functionality with existing save data.
 Preconditions: User is logged in and navigated to the save train page. Existing save data is present.
@@ -172,6 +258,14 @@ Test Steps:
 
 Click the train button.
 Expected Result: Message "model saved successfully" is displayed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-014
 Test Case Description: Verify train button functionality without existing save data.
 Preconditions: User is logged in and navigated to the save train page. No existing save data is present.
@@ -179,6 +273,14 @@ Test Steps:
 
 Click the train button.
 Expected Result: Message "no untrained data is there" is displayed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-015
 Test Case Description: Verify error handling for invalid CSS file upload.
 Preconditions: User is logged in and navigated to the save train page.
@@ -187,6 +289,14 @@ Test Steps:
 Upload an invalid CSS file (e.g., corrupted or wrong format).
 Click the save button.
 Expected Result: An error message is displayed indicating the file upload failed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-016
 Test Case Description: Verify UI elements on the save train page.
 Preconditions: User is logged in and navigated to the save train page.
@@ -196,6 +306,14 @@ Check the presence of the file upload button for CSS.
 Check the save button.
 Check the train button.
 Expected Result: All UI elements are present and functional.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-017
 Test Case Description: Verify backend handling when clicking the save button without uploading a file.
 Preconditions: User is logged in and navigated to the save train page.
@@ -203,6 +321,14 @@ Test Steps:
 
 Click the save button without uploading a file.
 Expected Result: An error message is displayed indicating no file was uploaded.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
 Test Case ID: TC-018
 Test Case Description: Verify backend handling when clicking the train button without any save data.
 Preconditions: User is logged in and navigated to the save train page. No save data is present.
@@ -210,3 +336,11 @@ Test Steps:
 
 Click the train button.
 Expected Result: Message "no untrained data is there" is displayed.
+
+
+Actual Result: 
+Status: 
+Remarks: 
+
+
+
